@@ -1,4 +1,4 @@
-package nl.paulzijlmans.spring.aop;
+package nl.paulzijlmans.spring.aop.springaop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

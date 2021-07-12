@@ -16,19 +16,19 @@ public class AfterAopAspect {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @AfterReturning(value = "execution(* nl.paulzijlmans.spring.aop.springaop.business.*.*(..))",
+    @AfterReturning(value = "nl.paulzijlmans.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()",
             returning = "result")
     public void after(JoinPoint joinPoint, Object result) {
         logger.info("{} return with value {}", joinPoint, result);
     }
 
-    @AfterThrowing(value = "execution(* nl.paulzijlmans.spring.aop.springaop.business.*.*(..))",
+    @AfterThrowing(value = "nl.paulzijlmans.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()",
             throwing = "exception")
     public void afterThrowing(JoinPoint joinPoint, Exception exception) {
         logger.info("{} throws exception {}", joinPoint, exception);
     }
 
-    @After(value = "execution(* nl.paulzijlmans.spring.aop.springaop.business.*.*(..))")
+    @After(value = "nl.paulzijlmans.spring.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public void after(JoinPoint joinPoint) {
         logger.info("after execution of {}", joinPoint);
     }

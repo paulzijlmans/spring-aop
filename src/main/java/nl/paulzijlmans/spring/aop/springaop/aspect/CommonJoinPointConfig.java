@@ -13,11 +13,18 @@ public class CommonJoinPointConfig {
     }
 
     @Pointcut("execution(* nl.paulzijlmans.spring.aop.springaop.data.*.*(..)) && execution(* nl.paulzijlmans.spring.aop.springaop.business.*.*(..))")
-    public void allLayerExecution() {}
+    public void allLayerExecution() {
+    }
 
     @Pointcut("bean(*dao*)")
-    public void beanContainingDao() {}
+    public void beanContainingDao() {
+    }
 
     @Pointcut("within(nl.paulzijlmans.spring.aop.springaop.data..*)")
-    public void dataLayerExecutionWithWithin() {}
+    public void dataLayerExecutionWithWithin() {
+    }
+
+    @Pointcut("@annotation(nl.paulzijlmans.spring.aop.springaop.aspect.TrackTime)")
+    public void trackTimeAnnotation() {
+    }
 }
